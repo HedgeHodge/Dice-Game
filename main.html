@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Fascinate|Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Dice Game</h1>
+    <div class="container">
+        <div class="col">
+            <h2>Player 1</h2>
+            <img id="dice1" src="./SVG/Dice1.svg" alt="Dice with value of 1">
+            <button onclick="rollDice('one')">Roll</button>
+        </div>
+        <div class="col">
+            <h2>Player 2</h2>
+            <img id="dice2" src="./SVG/Dice1.svg" alt="Dice with value of 1">
+            <button onclick="rollDice('two')">Roll</button>
+        </div>
+    </div>
+    <script>
+        let oneDiceValue = 1;
+        let twoDiceValue = 1;
+        const diceArray = ["./SVG/Dice1.svg", "./SVG/Dice2.svg", "./SVG/Dice3.svg", "./SVG/Dice4.svg", "./SVG/Dice5.svg", "./SVG/Dice6.svg", ];
+        function rollDice(dice) {
+            let randomNumber = Math.floor(Math.random() * Math.floor(6));
+            if(dice === "one") {
+                oneDiceValue = randomNumber;
+                document.getElementById("dice1").src = diceArray[randomNumber];
+            }
+            else {
+                twoDiceValue = randomNumber;
+                document.getElementById("dice2").src = diceArray[randomNumber];
+            }
+        }
+    </script>
+</body>
+</html>
